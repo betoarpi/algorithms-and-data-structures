@@ -8,12 +8,9 @@
 
 function reverse(str) {
   //convert the str into an array
-  const arr = str.split('')
   //reverse the array
-  arr.reverse()
   //join and return the reversed string
-  return arr.join('')
-
+  return str.split('').reverse().join('')
 }
 
 module.exports = reverse;
