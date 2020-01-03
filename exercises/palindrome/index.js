@@ -7,7 +7,16 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) { }
+function palindrome(str) {
+  // it converts the string into an array
+  return str.split('').every((char, i) => {
+    // it compares every character from the edges to the center of the array
+    // example in [a, n, a] it first compares "a" at position 0 with "a" at position 2
+    // if any of the comparisons give false, the word is not a palindrome
+    // if all the character comparisons give true, the word is a palindrome
+    return char === str[str.length - i - 1]
+  })
+}
 
 module.exports = palindrome;
 
