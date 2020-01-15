@@ -9,6 +9,28 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
+  /* Pseudo code
+  1. Create empty 'chunked' array
+  2. Create 'index' start at 0
+  3. While index is less than array.length
+    - Push a slice of length 'size' from 'array' into 'chunked'
+    - Add size to 'index'
+  */
+
+  const chunked = []
+  let index = 0
+
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size))
+    index += size
+  }
+
+  return chunked
+}
+
+module.exports = chunk;
+
+/* function chunk(array, size) {
   /*Pseudo code:
   1. Create an empty array to hold chunks called 'chunked'
   2. For each element in the "unchunked" array
@@ -16,7 +38,6 @@ function chunk(array, size) {
     - If the last element does not exist, or if the length is equal to chunk size
         -- Push a new chunk into 'chunked' with the current element
     - Else add the current element into the chunk
-  */
   const chunked = []
 
   for (let element of array) {
@@ -30,6 +51,4 @@ function chunk(array, size) {
   }
 
   return chunked
-}
-
-module.exports = chunk;
+} */
